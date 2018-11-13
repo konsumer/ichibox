@@ -1,0 +1,26 @@
+{
+  "name": "ichibox",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./engine/index.js"
+  },
+  "bin": {
+    "engine": "engine/index.js"
+  },
+  "keywords": [
+    "speech",
+    "assistant",
+    "ai"
+  ],
+  "author": "David Konsumer <konsumer@jetboystudio.com> (http://konsumer.js.org)",
+  "license": "MIT",
+  "dependencies": {
+    "deepspeech": "^0.3.0",
+    "dotenv": "^6.1.0",
+    "node-record-lpcm16": "^0.3.1",
+    "play-sound": "^1.1.2",
+    "say": "^0.15.0"
+  }
+}
