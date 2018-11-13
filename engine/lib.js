@@ -12,20 +12,9 @@ const {
   DEEP_LM,
   DEEP_TRIE,
   DEEP_LM_WEIGHT,
-  DEEP_VALID_WORD_COUNT_WEIGHT
+  DEEP_VALID_WORD_COUNT_WEIGHT,
+  WAKEWORD
 } = process.env
-
-console.log({
-  DEEP_MODEL,
-  DEEP_N_FEATURES,
-  DEEP_N_CONTEXT,
-  DEEP_ALPHABET,
-  DEEP_BEAM_WIDTH,
-  DEEP_LM,
-  DEEP_TRIE,
-  DEEP_LM_WEIGHT,
-  DEEP_VALID_WORD_COUNT_WEIGHT
-})
 
 process.chdir(`${__dirname}/..`)
 var model = new Ds.Model(DEEP_MODEL, parseInt(DEEP_N_FEATURES), parseInt(DEEP_N_CONTEXT), DEEP_ALPHABET, parseInt(DEEP_BEAM_WIDTH))
@@ -63,6 +52,7 @@ module.exports.stt = buff => {
 
 // say some text
 module.exports.say = text => new Promise((resolve, reject) => {
+  console.log(`${WAKEWORD}:`, text)
   say.speak(text, null, null, err => {
     if (err) {
       console.error('ERROR', err)
