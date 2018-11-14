@@ -11,7 +11,7 @@ const run = async () => {
 
   while (true) {
     const buffer = await listen()
-    console.log('I HEARD:', stt(buffer))
+    await say(`I HEARD: ${stt(buffer)}`)
 
     // TODO: do proper wake-word detection here, to switch between "open listening" and "parsing text" mode
   }
